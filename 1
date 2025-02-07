@@ -1,0 +1,47 @@
+# task_1:
+class Create_Personage:
+    def init(self, name_pers, class_pers, hp_pers, damage_pers):
+        """Конструктор класса. Инициализирует атрибуты персонажа."""
+        self.name_pers = name_pers
+        self.class_pers = class_pers
+        self.hp_pers = hp_pers
+        self.damage_pers = damage_pers
+
+    def print_info(self):
+        """Выводит информацию о персонаже."""
+        print(f"Имя: {self.name_pers}")
+        print(f"Класс: {self.class_pers}")
+        print(f"Жизни: {self.hp_pers}")
+        print(f"Урон: {self.damage_pers}")
+
+    def go_on_a_trip(self):
+        """Выводит сообщение о начале путешествия."""
+        print(f"{self.name_pers} отправился в путешествие!")
+
+    def go_back(self):
+        """Выводит сообщение о возвращении персонажа назад."""
+        print(f"{self.name_pers} возвращается назад.")
+
+    def start_training(self):
+        """Выводит сообщение о тренировке и увеличивает характеристики персонажа."""
+        print(f"{self.name_pers} начал тренировку...")
+        self.hp_pers += 10  # Увеличиваем жизни
+        self.damage_pers += 5  # Увеличиваем урон
+        print(f"После тренировки характеристики улучшились!")
+        print(f"Новые жизни: {self.hp_pers}, Новый урон: {self.damage_pers}")
+
+    def start_the_battle(self):
+        """Выводит сообщение о начале битвы и показывает характеристики персонажа."""
+        print(f"{self.name_pers} готовится к сражению!")
+        self.print_info()
+
+
+# Создание объекта персонажа
+hero = Create_Personage(name_pers="Артур", class_pers="Воин", hp_pers = 100, damage_pers = 20)
+
+# Вызов методов
+hero.print_info()
+hero.go_on_a_trip()
+hero.start_training()
+hero.start_the_battle()
+hero.go_back()
