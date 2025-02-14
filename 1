@@ -48,3 +48,29 @@ hero.go_back()
 
 #task 2
 
+class Room:
+    items = []
+
+    def __init__(self, name):
+        self.name = name
+
+
+    def print_items(self):
+        print(f"Всепредметыв комате {self.name}: {','.join(self.items)}")
+
+
+    def add_item(self, *item):
+        self.items.extend(item)
+
+
+    def del_item(self,item):
+        if item in self.items:
+            self.items.remove(item)
+            print(f"Все предметы в комнате: {','.join(self.items)}")
+        else:
+            print("Такого предмета нет в комате")
+
+room1 = Room("Кухня")
+room1.add_item("Холодильник", "Стул", "Стол")
+room1.print_items()
+room1.del_item("Стул")
